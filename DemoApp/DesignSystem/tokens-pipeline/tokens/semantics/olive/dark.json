@@ -1,0 +1,112 @@
+{
+  "color": {
+    "surface": {
+      "primary": {
+        "$value": "{color.black}",
+        "$type": "color"
+      },
+      "secondary": {
+        "$value": "{color.turquoise.900}",
+        "$type": "color"
+      },
+      "inverse": {
+        "$value": "{color.turquoise.600}",
+        "$type": "color"
+      }
+    },
+
+    "border": {
+      "default": {
+        "$value": "{color.neutral.50}",
+        "$type": "color"
+      }
+    },
+
+    "text": {
+      "primary": {
+        "$value": "{color.neutral.50}",
+        "$type": "color"
+      },
+      "secondary": {
+        "$value": "{color.neutral.200}",
+        "$type": "color"
+      },
+      "inverse": {
+        "$value": "{color.turquoise.950}",
+        "$type": "color"
+      },
+      "disabled": {
+        "$value": "{color.neutral.500}",
+        "$type": "color"
+      }
+    },
+
+    "accent": {
+      "primary": {
+        "$value": "{color.turquoise.400}",
+        "$type": "color"
+      },
+      "secondary": {
+        "$value": "{color.turquoise.500}",
+        "$type": "color"
+      },
+      "destructive": {
+        "$value": "{color.red.100}",
+        "$type": "color"
+      }
+    },
+
+    "status": {
+      "success": {
+        "$value": "{color.green.100}",
+        "$type": "color"
+      },
+      "error": {
+        "$value": "{color.red.100}",
+        "$type": "color"
+      },
+      "warning": {
+        "$value": "{color.turquoise.400}",
+        "$type": "color"
+      },
+      "info": {
+        "$value": "{color.neutral.500}",
+        "$type": "color"
+      }
+    },
+
+    "gradient": {
+      "primary": {
+        "first": {
+          "$value": "{color.white}",
+          "$type": "color"
+        },
+        "second": {
+          "$value": "{color.turquoise.100}",
+          "$type": "color"
+        },
+        "third": {
+          "$value": "{color.turquoise.200}",
+          "$type": "color"
+        }
+      },
+
+      "accent": {
+        "$value": "{color.turquoise.300}",
+        "$type": "color"
+      },
+
+      "radial": {
+        "$value": "{color.turquoise.100}",
+        "$type": "color"
+      }
+    },
+
+    "rating": {
+      "default": {
+        "$value": "{color.white}",
+        "$type": "color"
+      }
+    }
+  }
+}

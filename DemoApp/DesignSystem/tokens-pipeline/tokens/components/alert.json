@@ -1,0 +1,38 @@
+{
+  "alert": {
+    "default": {
+      "background": {
+        "$value": "{color.surface.secondary}",
+        "$type": "color"
+      }
+    },
+
+    "success": {
+      "background": {
+        "$value": "{color.status.success}",
+        "$type": "color"
+      }
+    },
+
+    "error": {
+      "background": {
+        "$value": "{color.status.error}",
+        "$type": "color"
+      }
+    },
+
+    "warning": {
+      "background": {
+        "$value": "{color.status.warning}",
+        "$type": "color"
+      }
+    },
+
+    "info": {
+      "background": {
+        "$value": "{color.status.info}",
+        "$type": "color"
+      }
+    }
+  }
+}

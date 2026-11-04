@@ -1,0 +1,13 @@
+{
+  "disclaimer": {
+    "background": {
+      "$value": "{color.surface.inverse}",
+      "$type": "color"
+    },
+
+    "foreground": {
+      "$value": "{color.text.inverse}",
+      "$type": "color"
+    }
+  }
+}

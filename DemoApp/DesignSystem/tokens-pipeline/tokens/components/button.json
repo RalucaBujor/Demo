@@ -1,0 +1,51 @@
+{
+  "button": {
+    "primary": {
+      "background": {
+        "default": {
+          "$value": "{color.accent.primary}",
+          "$type": "color"
+        }
+      },
+
+      "foreground": {
+        "default": {
+          "$value": "{color.text.inverse}",
+          "$type": "color"
+        }
+      }
+    },
+
+    "secondary": {
+      "background": {
+        "default": {
+          "$value": "{color.accent.secondary}",
+          "$type": "color"
+        }
+      },
+
+      "foreground": {
+        "default": {
+          "$value": "{color.text.inverse}",
+          "$type": "color"
+        }
+      }
+    },
+
+    "destructive": {
+      "background": {
+        "default": {
+          "$value": "{color.status.error}",
+          "$type": "color"
+        }
+      }
+    },
+
+    "border": {
+        "default": {
+          "$value": "{color.border.default}",
+          "$type": "color"
+        }
+      }
+  }
+}

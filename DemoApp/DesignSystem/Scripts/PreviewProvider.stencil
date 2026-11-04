@@ -1,0 +1,73 @@
+import XCTest
+import SwiftUI
+import SnapshotTesting
+@testable import DesignSystem
+
+@MainActor
+private func assertPreviewSnapshot<T: PreviewProvider>(
+    _ target: T.Type,
+    // #filePath, not #file: in Swift 6 #file is just "Module/File.swift", which would make
+    // SnapshotTesting store references inside the simulator instead of next to this file.
+    file: StaticString = #filePath,
+    testName: String = #function,
+    line: UInt = #line,
+    isDarkMode: Bool = false,
+    record: SnapshotTestingConfiguration.Record = .init(rawValue: "never")!  // default verify
+) {
+    for preview in T._allPreviews {
+        let content = preview.content
+        let controller = UIHostingController(rootView: content)
+
+        if isDarkMode {
+            controller.overrideUserInterfaceStyle = .dark
+        }
+
+        assertSnapshot(
+            of: controller,
+            // A small perceptual tolerance absorbs the anti-aliasing differences between
+            // iOS versions, while still failing on any change a person would notice.
+            as: .image(on: .iPhone13, perceptualPrecision: 0.98),
+            record: record,
+            file: (file),
+            testName: testName,
+            line: line
+        )
+    }
+}
+
+@MainActor
+final class PreviewSnapshotTests: XCTestCase {
+
+    /// The references in __Snapshots__ were recorded on an iPhone 17 Pro simulator with this
+    /// iOS version. Other versions render glass, shadows and text slightly differently, so
+    /// comparing against them would fail for reasons unrelated to the components.
+    static let referenceOSVersion = "26.5"
+
+    // Once per run (registering a font twice fails), so snapshots use the app's real fonts.
+    override class func setUp() {
+        super.setUp()
+        FontRegister.registerFonts()
+    }
+
+    override func setUpWithError() throws {
+        let osVersion = UIDevice.current.systemVersion
+        guard osVersion == Self.referenceOSVersion || osVersion.hasPrefix(Self.referenceOSVersion + ".") else {
+            throw XCTSkip("Snapshot references were recorded on iOS \(Self.referenceOSVersion) (iPhone 17 Pro). This simulator runs iOS \(osVersion) - run the tests on the reference simulator to compare them.")
+        }
+    }
+
+    // Record mode passed in by Scripts/sourcery.sh (SNAPSHOT_ACCEPT=1 records new references)
+    static let recordMode: SnapshotTestingConfiguration.Record = .init(rawValue: "{{ argument.recordMode }}")!
+
+    // One test per preview, in the system appearance it was designed for: each preview
+    // already picks its light or dark palette through its design tokens, so rendering a
+    // light-palette preview in dark mode would snapshot a combination the app never shows.
+    {% for type in types.based.PreviewProvider %}
+
+    func test{{type.name}}() {
+        assertPreviewSnapshot({{type.name}}.self,
+                              {% if type.name|contains:"DarkMode" %}isDarkMode: true,
+                              {% endif %}record: Self.recordMode)
+    }
+    {% endfor %}
+}

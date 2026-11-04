@@ -1,0 +1,112 @@
+{
+  "color": {
+    "surface": {
+      "primary": {
+        "$value": "{color.lime.50}",
+        "$type": "color"
+      },
+      "secondary": {
+        "$value": "{color.lime.100}",
+        "$type": "color"
+      },
+      "inverse": {
+        "$value": "{color.lime.400}",
+        "$type": "color"
+      }
+    },
+
+    "border": {
+      "default": {
+        "$value": "{color.neutral.900}",
+        "$type": "color"
+      }
+    },
+
+    "text": {
+      "primary": {
+        "$value": "{color.neutral.900}",
+        "$type": "color"
+      },
+      "secondary": {
+        "$value": "{color.neutral.700}",
+        "$type": "color"
+      },
+      "inverse": {
+        "$value": "{color.lime.950}",
+        "$type": "color"
+      },
+      "disabled": {
+        "$value": "{color.neutral.500}",
+        "$type": "color"
+      }
+    },
+
+    "accent": {
+      "primary": {
+        "$value": "{color.lime.500}",
+        "$type": "color"
+      },
+      "secondary": {
+        "$value": "{color.lime.500}",
+        "$type": "color"
+      },
+      "destructive": {
+        "$value": "{color.red.100}",
+        "$type": "color"
+      }
+    },
+
+    "status": {
+      "success": {
+        "$value": "{color.green.100}",
+        "$type": "color"
+      },
+      "error": {
+        "$value": "{color.red.100}",
+        "$type": "color"
+      },
+      "warning": {
+        "$value": "{color.lime.500}",
+        "$type": "color"
+      },
+      "info": {
+        "$value": "{color.neutral.500}",
+        "$type": "color"
+      }
+    },
+
+    "gradient": {
+      "primary": {
+        "first": {
+          "$value": "{color.neutral.900}",
+          "$type": "color"
+        },
+        "second": {
+          "$value": "{color.neutral.900}",
+          "$type": "color"
+        },
+        "third": {
+          "$value": "{color.neutral.900}",
+          "$type": "color"
+        }
+      },
+
+      "accent": {
+        "$value": "{color.neutral.900}",
+        "$type": "color"
+      },
+
+      "radial": {
+        "$value": "{color.neutral.900}",
+        "$type": "color"
+      }
+    },
+
+    "rating": {
+      "default": {
+        "$value": "{color.lime.400}",
+        "$type": "color"
+      }
+    }
+  }
+}

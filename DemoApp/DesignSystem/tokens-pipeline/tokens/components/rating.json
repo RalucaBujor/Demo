@@ -1,0 +1,10 @@
+{
+  "rating": {
+    "background": {
+      "default": {
+        "$value": "{color.rating.default}",
+        "$type": "color"
+      }
+    }
+  }
+}
